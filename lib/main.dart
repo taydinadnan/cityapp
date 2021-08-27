@@ -1,23 +1,11 @@
+import 'package:cities_app/Screens/city_screen.dart';
 import 'package:flutter/material.dart';
+
+import './Screens/Allcities_screen.dart';
 
 void main() {
   runApp(new MaterialApp(
-    home: Allcities(),
+    home: new Allcities(),
+    routes: {City.routeName: (ctx) => City()},
   ));
-}
-
-class Allcities extends StatelessWidget {
-  const Allcities({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.pink,
-        title: Text(
-          'All Cities',
-        ),
-      ),
-    );
-  }
 }
