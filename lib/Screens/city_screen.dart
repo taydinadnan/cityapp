@@ -1,3 +1,4 @@
+import 'package:cities_app/Screens/countryMap.dart';
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -58,7 +59,17 @@ class City extends StatelessWidget {
               ),
             ),
             GestureDetector(
-                onTap: () {}, child: CountryCard(title: 'Show on Map')),
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (ctx) => CountryMap(
+                        country['name'],
+                        country['latlng'],
+                      ),
+                    ),
+                  );
+                },
+                child: CountryCard(title: 'Show on Map')),
           ],
         ),
       ),
